@@ -1,0 +1,21 @@
+<h1>Restaurants</h1>
+
+
+
+<div class="cards">
+  <% @restaurants.each do |r| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+ <h5> <%= link_to r.name, restaurant_path(r.id) %> </h5>
+<%= r.address %>
+<%= r.phone_number %>
+<%= r.category %>
+  </div>
+<% end %>
+<hr>
+</div>
+
+
+<div>Add new restaurant here<%= link_to new_restaurant_path do %>
+  <i class="fas fa-plus"></i>
+  <% end %>
+</div>
